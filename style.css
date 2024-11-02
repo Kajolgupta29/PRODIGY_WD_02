@@ -1,0 +1,179 @@
+/* The CSS code provided is a set of styles for creating a stopwatch interface. Here is a breakdown of
+what each section of the CSS code does: */
+/* Reset and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Body styles */
+body {
+    font-family: sans-serif; /* Set font family */
+    font-size: 16px; /* Set base font size */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    background-color: black; /* Background color */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Column layout */
+}
+
+/* Outer circle styles */
+.outer-circle {
+    width: 230px; /* Circle width */
+    height: 230px; /* Circle height */
+    border-radius: 50%; /* Circular shape */
+    background-color: white; /* Background color */
+    display: flex; /* Flexbox for centering inner content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Animated background for stopwatch */
+.animation-bg {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background: linear-gradient(-45deg, #ee7752, orange, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%; /* Size of the gradient */
+    animation: gradient 7s ease infinite; /* Animation effect */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Midpoint position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+/* Inner circle styles */
+.inner-circle {
+    width: 210px; /* Inner circle width */
+    height: 210px; /* Inner circle height */
+    border-radius: 50%; /* Circular shape */
+    background-color: black; /* Inner background color */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color */
+    font-size: 23px; /* Base font size */
+    flex-direction: column; /* Column layout for time display */
+}
+
+/* Time display styles */
+.minute, .sec, .msec {
+    display: inline; /* Inline display for time segments */
+    font-size: 34px; /* Font size for time display */
+}
+
+/* Button wrapper styles */
+.button-wrapper {
+    width: 250px; /* Wrapper width */
+    margin-top: 30px; /* Spacing above */
+    display: flex; /* Flexbox for button alignment */
+    justify-content: space-between; /* Space between buttons */
+}
+
+/* Button styles */
+.button {
+    width: 50px; /* Button width */
+    height: 50px; /* Button height */
+    border-radius: 50%; /* Circular shape */
+    border: 2px solid white; /* Button border */
+    background-color: black; /* Button background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+    display: flex; /* Flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    font-size: 16px; /* Button font size */
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: white; /* Change background on hover */
+    color: black; /* Change text color on hover */
+}
+
+/* Laps list styles */
+.laps {
+    list-style: none; /* No bullet points */
+    color: white; /* Text color */
+    width: 250px; /* Width of the lap list */
+    height: 250px; /* Height of the lap list */
+    overflow-y: auto; /* Vertical scrolling if needed */
+    position: relative; /* Position for layout */
+    margin-top: 30px; /* Spacing above */
+}
+
+/* Custom scrollbar for laps list */
+.laps::-webkit-scrollbar {
+    width: 8px; /* Width of scrollbar */
+}
+
+.laps::-webkit-scrollbar-thumb {
+    background-color: #444; /* Thumb color */
+    border-radius: 10px; /* Rounded edges */
+}
+
+/* Individual lap item styles */
+.lap-item {
+    display: inline-block; /* Inline-block for spacing */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for lap item */
+    text-align: center; /* Center text */
+    border: 1px solid #444; /* Border for lap item */
+    border-radius: 50px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below */
+}
+
+/* Number and timestamp styles */
+.number {
+    color: #cccccc; /* Color for lap number */
+    padding-right: 20px; /* Space to the right */
+}
+
+.time-stamp {
+    display: inline-block; /* Inline display */
+    margin-left: 25px; /* Space to the left */
+}
+
+/* Clear button styles */
+.lap-clear-button {
+    display: block; /* Block display */
+    position: fixed; /* Fixed positioning */
+    z-index: 1000; /* Above other elements */
+    bottom: 35px; /* Distance from bottom */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%); /* Adjust to center */
+    width: 130px; /* Width of button */
+    padding: 10px 0; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9); /* Background color */
+    border: 1px solid white; /* Border */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Transition effects */
+}
+
+/* Clear button hover effect */
+.lap-clear-button:hover {
+    background-color: black; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Hidden class for elements */
+.hidden {
+    visibility: hidden; /* Hides elements */
+}
